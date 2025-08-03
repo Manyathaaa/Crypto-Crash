@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { isKeyObject } from "util/types";
 
 const betSchema = new mongoose.Schema(
   {
