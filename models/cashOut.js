@@ -40,4 +40,7 @@ const cashOutSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("CashOut", cashOutSchema);
+const CashOut =
+  mongoose.models.CashOut || mongoose.model("CashOut", cashOutSchema);
+
+export default CashOut;

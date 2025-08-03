@@ -6,14 +6,16 @@ const gameRoundSchema = new mongoose.Schema(
     startTime: { type: Date, default: Date.now },
     crashPoint: { type: Number, required: true },
     seed: { type: String, required: true }, // used for provably fair algo
-    bet: { type: mongoose.Schema.Types.ObjectId, ref: "Bet", required: true },
+    bet: { type: mongoose.Schema.Types.ObjectId, ref: "Bet" },
     cashOut: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "CashOut",
-      required: true,
     },
   },
   { timestamps: true }
 );
 
-export default mongoose.model("GameRound", gameRoundSchema);
+const GameRound =
+  mongoose.models.GameRound || mongoose.model("GameRound", gameRoundSchema);
+
+export default GameRound;

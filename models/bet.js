@@ -41,4 +41,6 @@ const betSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("Bet", betSchema);
+const Bet = mongoose.models.Bet || mongoose.model("Bet", betSchema);
+
+export default Bet;
